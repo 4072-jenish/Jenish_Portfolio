@@ -24,8 +24,10 @@ User attached: `Jenish_Learning_Journey_Seed.md` describing 10 phases of his sel
 - Custom: mix-blend-mode floating cursor (dot + ring), scroll progress bar, noise overlay, mobile nav overlay.
 
 ## What Works
-- Backend 100% (test report iteration_1.json)
-- Frontend ~95% (only native HTML5 validation on empty contact form instead of toast — POST is correctly blocked)
+- Backend 100% (test reports iteration_1.json, iteration_2.json)
+- Frontend 100% delta tested
+- 7 projects displayed: Blog Mediator (Next.js), Astro Public Blog, Blog Admin Panel (React+Shadcn), E-Commerce, Team Collab, Business Landing, First Website
+- Resume PDF downloadable from Hero + Nav (data-testid hero-cta-resume, nav-resume-cta)
 - End-to-end contact submission persists to MongoDB and shows success toast.
 
 ## Backlog / Next Tasks
