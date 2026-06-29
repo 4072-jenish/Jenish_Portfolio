@@ -1,0 +1,32 @@
+{
+  "summary": "First end-to-end smoke test of Jenish portfolio. Backend (4/4) and frontend (all primary flows) verified against public URL. Contact submission persists to MongoDB; filters, FAQs, nav, hero, mobile nav all functional. One minor deviation: native HTML5 required-validation handles empty contact form instead of a custom Sonner error toast (no POST is fired, so requirement partially satisfied).",
+  "tested_scope": ["backend", "frontend", "integration"],
+  "passed": [
+    "GET /api/ -> 200 {message: 'Jenish Portfolio API alive'}",
+    "POST /api/contact valid payload -> 200 returns saved record with id+ISO timestamp",
+    "POST /api/contact invalid email -> 422 with pydantic email validation error",
+    "GET /api/contact -> 200, sorted by timestamp desc (latest record on top)",
+    "Frontend loads at root, data-testid='portfolio-root' visible, 0 console errors",
+    "All 6 nav-link-* testids present and clickable (home/about/skills/projects/faqs/contact)",
+    "Hero shows 'Crafting Digital' heading + data-testid='hero-typed-word' animating",
+    "Projects: 4 default cards; filter-frontend -> 2; filter-full-stack -> 2; filter-all -> 4",
+    "FAQ toggles 0 and 2 clickable without errors",
+    "Contact form valid submission: success toast 'Message sent. I will get back within 24 hours.', inputs cleared, record persisted (verified via GET /api/contact)",
+    "Mobile nav (390px) opens via nav-menu-toggle and closes via nav-menu-close",
+    "Empty contact form does NOT fire POST /api/contact (verified via request listener)"
+  ],
+  "failed": [
+    {
+      "area": "Frontend / Contact form empty-submit UX",
+      "issue": "Empty form submission shows the browser's native HTML5 'Please fill out this field' tooltip instead of a Sonner error toast (spec said 'error toast').",
+      "evidence": "Screenshot shows native validation popover; no [data-sonner-toast] element rendered. POST is correctly suppressed.",
+      "priority": "LOW"
+    }
+  ],
+  "action_items": [
+    "Optional: if a custom Sonner error toast is required for empty fields, remove the 'required' HTML attribute on inputs and rely on JS validation + toast.error(...). Otherwise current behavior is acceptable since no invalid POST is fired."
+  ],
+  "success_rate": {"backend": "100%", "frontend": "~95%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}

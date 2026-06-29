@@ -1,55 +1,63 @@
-import { useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import { HOME } from "@/constants/testIds";
+import { Toaster } from "sonner";
+import Cursor from "@/components/portfolio/Cursor";
+import ScrollProgress from "@/components/portfolio/ScrollProgress";
+import Nav from "@/components/portfolio/Nav";
+import Hero from "@/components/portfolio/Hero";
+import About from "@/components/portfolio/About";
+import Journey from "@/components/portfolio/Journey";
+import Skills from "@/components/portfolio/Skills";
+import Projects from "@/components/portfolio/Projects";
+import FAQ from "@/components/portfolio/FAQ";
+import Contact from "@/components/portfolio/Contact";
+import Footer from "@/components/portfolio/Footer";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
+function Portfolio() {
   return (
-    <div>
-      <header className="App-header">
-        <a
-          data-testid={HOME.emergentLink}
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
+    <div className="App" data-testid="portfolio-root">
+      <Cursor />
+      <ScrollProgress />
+      <div className="noise-overlay" aria-hidden />
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <Journey />
+        <Skills />
+        <Projects />
+        <FAQ />
+        <Contact />
+      </main>
+      <Footer />
+      <Toaster
+        position="bottom-center"
+        theme="dark"
+        toastOptions={{
+          style: {
+            background: "rgba(12,12,17,0.85)",
+            backdropFilter: "blur(20px)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            color: "#fff",
+            borderRadius: 0,
+            fontFamily: "JetBrains Mono, monospace",
+            fontSize: "12px",
+            letterSpacing: "0.05em",
+          },
+        }}
+      />
     </div>
   );
-};
+}
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="*" element={<Portfolio />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
