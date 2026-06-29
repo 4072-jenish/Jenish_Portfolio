@@ -1,0 +1,26 @@
+{
+  "summary": "Delta validation for iteration 2 (resume CTAs + 3 new projects). All 6 review requirements PASS. Backend untouched and smoke-verified (GET /api/ + GET /api/contact both 200).",
+  "tested_scope": ["frontend", "backend-smoke"],
+  "passed": [
+    "Hero: [data-testid='hero-cta-resume'] present with href=https://customer-assets.emergentagent.com/job_mern-innovator-1/artifacts/tzup2etd_Hiren%27s%20Resume.pdf, target=_blank, rel=noreferrer",
+    "Nav: [data-testid='nav-resume-cta'] visible at 1920px (xl) with correct PDF href and target=_blank",
+    "Projects: 7 cards rendered by default (3 new + 4 existing)",
+    "Projects: First 3 titles exactly match — 'Blog Platform — Mediator Panel', 'Public Blog Web — Astro', 'Blog Admin Panel'",
+    "Filter 'Frontend' -> 3 cards: Public Blog Web — Astro, Business Landing Page, First Website",
+    "Filter 'Full Stack' -> 4 cards: Blog Platform — Mediator Panel, Blog Admin Panel, E-Commerce Web App, Team Collaboration App",
+    "Live links for first 3 cards correct: midiator-penal.vercel.app/, public-blog-web.vercel.app/, blog-admin-panel-rho.vercel.app/dashboard (verified on both project-live-{idx} and project-link-{idx})",
+    "Backend smoke: GET /api/ -> 200, GET /api/contact -> 200"
+  ],
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {"ui_bugs": [], "integration_issues": [], "design_issues": []},
+  "notes": [
+    "Project thumbnails use thum.io screenshot proxy which may show placeholder/lazy load — not flagged as failure per main agent note.",
+    "Resume PDF popup opens in a new tab on click (target=_blank verified), but Playwright's popup URL captured as empty string in headless context for direct PDF resources. Not a functional defect — href is correctly wired."
+  ],
+  "test_report_links": ["/app/test_reports/iteration_2.json"],
+  "updated_files": [],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Iteration 1 + 2 both fully validated. PROJECTS data drives count/filter assertions — keep titles stable. Resume URL is also embedded as literal in Nav.jsx (not from PROFILE) — refactor opportunity if changed later."
+}

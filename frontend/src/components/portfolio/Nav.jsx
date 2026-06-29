@@ -59,6 +59,15 @@ export default function Nav() {
               <span className="w-1.5 h-1.5 bg-[var(--accent)] rounded-full" />
               Let&rsquo;s Talk
             </button>
+            <a
+              href="https://customer-assets.emergentagent.com/job_mern-innovator-1/artifacts/tzup2etd_Hiren%27s%20Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              data-testid="nav-resume-cta"
+              className="hidden xl:inline-flex btn-architectural ghost"
+            >
+              Resume ↓
+            </a>
             <button
               onClick={() => setOpen(true)}
               data-testid="nav-menu-toggle"

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { PROFILE, STATS } from "../../data/portfolio";
-import { ArrowDownRight, MapPin } from "lucide-react";
+import { ArrowDownRight, MapPin, Download } from "lucide-react";
 
 function Typed({ words, speed = 90, pause = 1600 }) {
   const [i, setI] = useState(0);
@@ -103,6 +103,15 @@ export default function Hero() {
             >
               Get in touch
             </button>
+            <a
+              href={PROFILE.resume}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-architectural ghost"
+              data-testid="hero-cta-resume"
+            >
+              <Download className="w-4 h-4" /> Resume
+            </a>
           </motion.div>
         </div>
 
