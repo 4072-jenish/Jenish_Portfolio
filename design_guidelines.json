@@ -1,0 +1,112 @@
+{
+  "theme": "Dark Luxury",
+  "archetype": "5",
+  "colors": {
+    "background": {
+      "main": "#050507",
+      "surface": "#0C0C11",
+      "surfaceGlass": "rgba(12, 12, 17, 0.6)",
+      "surfaceHighlight": "#16161D"
+    },
+    "text": {
+      "primary": "#F2F2F2",
+      "secondary": "#A1A1AA",
+      "muted": "#71717A"
+    },
+    "accent": {
+      "primary": "#E05C36",
+      "primaryHover": "#F26D47",
+      "secondary": "#C8A97E",
+      "border": "rgba(255, 255, 255, 0.08)",
+      "borderHighlight": "rgba(255, 255, 255, 0.15)"
+    }
+  },
+  "typography": {
+    "headings": {
+      "family": "Cabinet Grotesk, sans-serif",
+      "weights": ["400", "800", "900"],
+      "tracking": "tracking-tighter",
+      "usage": "H1, H2, large numbers, impactful statements"
+    },
+    "body": {
+      "family": "Manrope, sans-serif",
+      "weights": ["300", "400", "500"],
+      "usage": "Paragraphs, descriptions, forms"
+    },
+    "mono": {
+      "family": "JetBrains Mono, monospace",
+      "weights": ["400", "700"],
+      "tracking": "tracking-widest",
+      "usage": "Code snippets, overlines, tech tags, labels, small functional text"
+    },
+    "editorial": {
+      "family": "Cormorant Garamond, serif",
+      "weights": ["400italic"],
+      "usage": "Subtitles, quotes, 'made with love' text to add a luxury touch"
+    }
+  },
+  "layout": {
+    "spacingScale": "Generous. Use p-8, p-12, p-24, py-32 to create breathing room.",
+    "containerWidth": "max-w-7xl mx-auto",
+    "gridPatterns": {
+      "about": "Bento 'Control Room' grid mixed with 'Tetris' asymmetry.",
+      "projects": "Asymmetrical 12-column grid, spanning 8 cols and 4 cols.",
+      "skills": "Floating matrix/tags layout, avoiding standard boring lists."
+    }
+  },
+  "visualEnhancers": {
+    "noiseOverlay": "Fixed full-screen SVG noise filter (opacity: 0.03, mix-blend-mode: overlay) to give a tactile, architectural feel.",
+    "customCursor": "Custom React cursor following mouse with a 12px dot and a delayed 40px ring. Mix-blend-mode: difference.",
+    "scrollProgress": "Thin fixed top progress bar colored with accent #E05C36.",
+    "borders": "1px solid border-white/5 everywhere. Elements should feel 'drafted' or architectural.",
+    "glowEffects": "Subtle radial gradients (15% opacity) behind hero text and timeline nodes."
+  },
+  "components": {
+    "buttons": "Flat surfaceHighlight background, 1px borderHighlight, uppercase JetBrains Mono, hover: translate-y-[-2px] with glow.",
+    "cards": "surface background, backdrop-blur-xl, border-white/5, sharp corners or max rounded-md to maintain architectural brutalism.",
+    "timeline": "Vertical left-aligned 1px border. Nodes are empty squares that fill with accent color on scroll.",
+    "toast": "Sonner toast, dark theme, frosted glass background, solid white text.",
+    "accordion": "Shadcn accordion customized: huge text, no background, 1px bottom border, custom animated '+' to '-' icon.",
+    "forms": "Shadcn forms with flat inputs, no rounded corners, focus:ring-1 focus:ring-[#E05C36], subtle background fill."
+  },
+  "motion": {
+    "scrolling": "Lenis smooth scroll (momentum-based).",
+    "heroReveal": "Framer Motion staggered text reveal (fade-in-up) with slight rotation.",
+    "projectHover": "Image scale 1.05, 1px border glow, text unhides/slides up.",
+    "pageTransitions": "Fade in with 0.6s ease-out."
+  },
+  "sections": {
+    "Hero": {
+      "structure": "Massive 'Crafting Digital' split into two lines. Animated typed text below it using react-type-animation. Stats in a minimal bento row at bottom.",
+      "alignment": "Strictly left-aligned aligned to a visible grid line."
+    },
+    "About": {
+      "structure": "Bento Grid. One large cell for bio. Narrow cells for Fun Facts. Bottom full-width cell for Skill progress bars."
+    },
+    "LearningJourney": {
+      "structure": "10-phase vertical timeline. Use JetBrains Mono for the phase titles. Left side: Timeline line. Right side: Content."
+    },
+    "Skills": {
+      "structure": "Interactive marques or floating tags using JetBrains Mono, moving smoothly using framer-motion."
+    },
+    "Projects": {
+      "structure": "Alternating left/right layout. Large images, minimalistic text underneath. Project Links must use data-testid."
+    },
+    "Contact": {
+      "structure": "Split layout. Left: Massive 'Let's Talk' typography. Right: Minimalist form (Shadcn customized)."
+    }
+  },
+  "media": {
+    "images": "Use abstract CSS gradients and CSS-based noise. For project placeholders, use high-contrast text-based placeholders or generative canvas backgrounds since external stock APIs are unavailable."
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the Dark Luxury archetype with the specified colors. Do not use generic tailwind grays; use the custom Midnight Obsidian colors.",
+    "Install and use 'lenis' for smooth scrolling.",
+    "Install 'framer-motion' for scroll reveals, floating elements, and the custom cursor.",
+    "Install 'react-type-animation' for the Hero typing effect.",
+    "Use Shadcn UI but heavily customize the borders and backgrounds to match the glassy/architectural look. Strip all rounded-xl or rounded-lg; use rounded-sm or rounded-none.",
+    "Implement the noise overlay as a fixed div with pointer-events-none over the entire app.",
+    "Use JetBrains Mono for all overlines, small labels, numeric stats, and form placeholders.",
+    "ALL interactive elements (buttons, links, form inputs) MUST include a 'data-testid' attribute (e.g., data-testid='contact-submit-button')."
+  ]
+}
