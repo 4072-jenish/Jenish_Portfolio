@@ -60,7 +60,7 @@ export default function Nav() {
               Let&rsquo;s Talk
             </button>
             <a
-              href="https://customer-assets.emergentagent.com/job_mern-innovator-1/artifacts/tzup2etd_Hiren%27s%20Resume.pdf"
+              href="/jenish-resume.pdf"
               target="_blank"
               rel="noreferrer"
               data-testid="nav-resume-cta"

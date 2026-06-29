@@ -9,7 +9,7 @@ export const PROFILE = {
   phone: "+91 99093 86875",
   github: "https://github.com/",
   linkedin: "https://www.linkedin.com/",
-  resume: "https://customer-assets.emergentagent.com/job_mern-innovator-1/artifacts/tzup2etd_Hiren%27s%20Resume.pdf",
+  resume: "/jenish-resume.pdf",
   responseTime: "Within 24 hours",
   schedule: "Mon — Fri, 9AM — 6PM",
   bio: "I'm Jenish, a passionate and dedicated student at Red and White Multimedia Education. I specialize in building dynamic and responsive web applications using the MERN Stack. I love solving complex problems with clean, efficient code and creating user-centric designs that make a difference.",
@@ -61,7 +61,7 @@ export const PROJECTS = [
   {
     title: "Blog Platform — Mediator Panel",
     year: "2026",
-    image: "https://image.thum.io/get/width/1600/crop/1000/noanimate/https://midiator-penal.vercel.app/",
+    image: "/projects/futuristic-blog.png",
     description: "Futuristic mediator dashboard for a 4-app blog ecosystem. Approve / reject blog requests, manage flow, and orchestrate role-based publishing between authors and admins.",
     tech: ["Next.js 16", "TypeScript", "Redux Toolkit", "Tailwind", "Framer Motion", "JWT", "RBAC"],
     link: "https://midiator-penal.vercel.app/",
@@ -71,7 +71,7 @@ export const PROJECTS = [
   {
     title: "Public Blog Web — Astro",
     year: "2026",
-    image: "https://image.thum.io/get/width/1600/crop/1000/noanimate/https://public-blog-web.vercel.app/",
+    image: "/projects/astro-blog.png",
     description: "Reader-facing public site with SSR + runtime API fetching. Only approved posts surface here — clean, editorial typography and SEO-ready dynamic routes.",
     tech: ["Astro", "Tailwind", "Runtime API", "SEO", "Dynamic Routes"],
     link: "https://public-blog-web.vercel.app/",
@@ -81,7 +81,7 @@ export const PROJECTS = [
   {
     title: "Blog Admin Panel",
     year: "2026",
-    image: "https://image.thum.io/get/width/1600/crop/1000/noanimate/https://blog-admin-panel-rho.vercel.app/dashboard",
+    image: "/projects/admin-panel.png",
     description: "Full admin control room — user management, blog moderation (approve / reject), live analytics with daily growth charts, and role assignment. Backed by NestJS + PostgreSQL.",
     tech: ["React", "Shadcn UI", "Tailwind", "Recharts", "NestJS", "PostgreSQL", "TypeORM"],
     link: "https://blog-admin-panel-rho.vercel.app/dashboard",

@@ -38,8 +38,8 @@ export default function Hero() {
       {/* Background grid */}
       <div className="absolute inset-0 grid-bg opacity-60" />
       {/* Radial glow */}
-      <div className="absolute -top-40 -left-20 w-[600px] h-[600px] rounded-full" style={{ background: "radial-gradient(circle, rgba(224,92,54,0.18), transparent 60%)" }} />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full" style={{ background: "radial-gradient(circle, rgba(200,169,126,0.10), transparent 60%)" }} />
+      <div className="absolute -top-40 -left-20 w-[600px] h-[600px] rounded-full" style={{ background: "radial-gradient(circle, rgba(168,85,247,0.22), transparent 60%)" }} />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full" style={{ background: "radial-gradient(circle, rgba(192,132,252,0.14), transparent 60%)" }} />
 
       <div className="relative max-w-[1400px] mx-auto px-6 md:px-12 w-full">
         {/* Top meta strip */}
