@@ -91,7 +91,7 @@ export const PROJECTS = [
   {
     title: "E-Commerce Web App",
     year: "2025",
-    image: "https://res.cloudinary.com/dd8rb9luw/image/upload/v1772777439/alvag90nvlhrqmhp5xgh.png",
+    image: "https://res.cloudinary.com/dd8rb9luw/image/upload/v1782973066/ddkyqveko2cboyood9da.png",
     description: "A complete e-commerce platform built with React featuring cart, checkout, filters, and Firebase auth — Cloudinary powered media.",
     tech: ["React", "Redux", "Firebase", "Cloudinary", "Bootstrap"],
     link: "https://flipcart-clone-cc07d.web.app/",
